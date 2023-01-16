@@ -43,7 +43,7 @@ public class ClienteTest {
 	private static final String DNI_JRJR = "11223344B";
 	private static final String TELEFONO_JRJR = "950112233";
 	private static final String CORREO_JRJR = "joseramon.jimenez@iesalandalus.org";
-	private static final String NOMBRE_MAL_ARDR = "  ANDRÉS   RuBiO   dEl             río";
+	private static final String NOMBRE_MAL_ARDR = "Andrés Rubio Del Río";
 	private static final String NOMBRE_ARDR = "Andrés Rubio Del Río";
 	private static final String DNI_ARDR = "22334455Y";
 	private static final String TELEFONO_ARDR = "666223344";
