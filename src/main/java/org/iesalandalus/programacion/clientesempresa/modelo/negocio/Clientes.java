@@ -56,21 +56,11 @@ public class Clientes {
 	
 	private int buscarIndice(Cliente cliente) {
 		
-		int pos=-1; 
-		for(int i=0; i<coleccionClientes.length; i++) {
-			
-			if(coleccionClientes[i].equals(cliente)) {
-				
-				pos=i; 
-			}
-		}
+		int indice = -1;
+		for(int i=0; i<tamano;i++) {if(cliente.equals(coleccionClientes[i])) {indice = i;}}	
 		
-		if(pos==-1) {
-			
-			return this.tamano+1; 
-		}else {
-			return pos;
-		}
+		if (indice>=0) {return indice;}
+		else return ((tamano)+1) ;
 	}
 		
 	// Se crea el método capacidad superada
