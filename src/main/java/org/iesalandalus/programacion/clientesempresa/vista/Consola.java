@@ -21,15 +21,10 @@ public class Consola {
 			switch (opcion) { 
 			
 			    case 1:return Opcion.INSERTAR_CLIENTE;
-			    
 			    case 2:return Opcion.BUSCAR_CLIENTE;
-			    	
 			    case 3:return Opcion.BORRAR_CLIENTE;
-
 			    case 4:return Opcion.MOSTRAR_CLIENTES;
-			    	
 			    case 5:return Opcion.MOSTRAR_CLIENTES_FECHA;
-
 			    case 6:return Opcion.SALIR;
 			   
 			    default:return null;
@@ -50,21 +45,21 @@ public class Consola {
 			System.out.println("Introduzca los siguientes datos del cliente:");
 			
 	        String[] palabras = nombre.split("\\s+");
-	        do {System.out.println("Introduzca el nombre y apellidos;");
+	        do {System.out.println("Introduzca el nombre y apellidos: ");
 	        nombre=Entrada.cadena(); palabras = nombre.split("\\s+");}
 			while(palabras.length<2);
 			
 	        do{
-				System.out.println("Introduzca el correo;");
+				System.out.println("Introduzca el correo: ");
 				correo = Entrada.cadena();}
 				while(!correo.matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}"));
 			
 			do {
-				System.out.println("Introduzca un dni correcto;");
+				System.out.println("Introduzca DNI con formato correcto (8 cifras seguido de letra): ");
 				dni = Entrada.cadena();}
 				while(!dni.matches("[0-9]{7,8}[A-Z a-z]"));
 				
-			do {System.out.println("Introduzca un telefono correcto(9 numeros sin mas caracteres);");
+			do {System.out.println("Introduzca un teléfono correcto(Sólo 9 cifras): ");
 				telefono = Entrada.cadena();}
 				while(!telefono.matches("^[0-9]{9}$"));
 				
@@ -81,7 +76,7 @@ public class Consola {
 	String dni = "a";	
 
 	boolean dniCorrecto = false;
-    do{System.out.println("Introduzca un dni con formato correcto,si no lo es,se seguira pidiendo.;");
+    do{System.out.println("Introduzca un DNI con formato correcto (8 cifras seguido de una letra: "); 
      
         dni = Entrada.cadena();   dniCorrecto=dni.matches("[0-9]{7,8}[A-Z a-z]");
     }while(!dniCorrecto);
@@ -99,10 +94,10 @@ public class Consola {
 		int anio = -1;
 		
 		while (!fechaCorrecta) {
-			System.out.println("A continuacion se le va a pedir los datos de la fecha de nacimiento;");
-			while(dia>32||dia<0) {System.out.println("Introduzca el dia;");dia =Entrada.entero();}
-			while(mes>13||mes<0) {System.out.println("Introduzca el mes;");mes =Entrada.entero();}
-			while(anio>Year.now().getValue()||anio<1920) {System.out.println("Introduzca el año;");anio =Entrada.entero();}
+			System.out.println("A continuación se pedirán los datos de la fecha de nacimiento: ");
+			while(dia>32||dia<0) {System.out.println("Introduzca el día: ");dia =Entrada.entero();}
+			while(mes>13||mes<0) {System.out.println("Introduzca el mes: ");mes =Entrada.entero();}
+			while(anio>Year.now().getValue()||anio<1920) {System.out.println("Introduzca el año: ");anio =Entrada.entero();}
 				
 				if(mes==2&&(java.time.Year.of(anio).isLeap())&&dia<=29) {fechaCorrecta = true;}
 				if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia<=30) {fechaCorrecta=true;}
